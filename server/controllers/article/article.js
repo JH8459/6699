@@ -11,12 +11,12 @@ module.exports = {
       const { order } = req.query;
       // 만약 좋아요순 정렬이라면, 다음을 실행한다 (default)
       if(order === 'like') {
-        const articleInfo = await articles.findAll({ where: { saying_id: sayingId }, order: [['total_like', 'DESC'], ['updatedAt', 'DESC']] })
+        const articleInfo = await articles.findAll({ where: { saying_id: sayingId }, order: [['view','DESC'], ['total_like', 'DESC'], ['updatedAt', 'DESC']] })
         res.status(200).json({ data: { articleInfo: articleInfo }, message: '게시물 좋아요순!' });
       } 
       // 만약 최신순 정렬이라면, 다음을 실행한다
       else if(order === 'new') {
-        const articleInfo = await articles.findAll({ where: { saying_id: sayingId }, order: [['updatedAt', 'DESC'], ['total_like', 'DESC']] })
+        const articleInfo = await articles.findAll({ where: { saying_id: sayingId }, order: [['view','DESC'], ['updatedAt', 'DESC'], ['total_like', 'DESC']] })
         res.status(200).json({ data: { articleInfo: articleInfo }, message: '게시물 최신순!' });
       } 
       // order에 아무것도 담겨있지 않았다면, 다음을 실행한다

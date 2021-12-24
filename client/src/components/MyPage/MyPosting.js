@@ -21,9 +21,10 @@ function MyPosting(){
                 `${REACT_APP_API_URL}/user/myarticle`,
                 {withCredentials: true}
             );
+            console.log('res.data.data.filteredArticle: ', res.data.data.filteredArticle);
             if(rendering){
+                if(Array.isArray(res.data.data.filteredArticle)) setRendering(false);
                 dispatch(setPosts(res.data.data.filteredArticle));
-                setRendering(false);
                 setLoading(false);
             }
         }

@@ -82,7 +82,6 @@ getLikeOrNew(('like'));
     <p id={style.saying}>
     <Link to= '/mainpage' className={style.link} 
                 onClick={() =>{
-                  goCategoryPage(saying.category)
                   getLikeRanking(saying.category)
                   dispatch(setFocusedSayingId(saying.id))
                   dispatch(setFocusedTitle(saying.content))

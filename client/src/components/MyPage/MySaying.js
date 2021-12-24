@@ -21,8 +21,9 @@ useEffect(()=>{
          `${REACT_APP_API_URL}/user/mysaying`,
          {withCredentials: true}
          )
+         console.log(res.data);
          if(rendering){
-           dispatch(setSayings(res.data.data.filteredSaying))
+            if(res.data.data.filteredArticle) dispatch(setSayings(res.data.data.filteredSaying))
            setRendering(false)
            setLoading(false);         
          }

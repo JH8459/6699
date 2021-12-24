@@ -111,6 +111,24 @@
   z-index: 888;
 }
 
+.setting_toggle:hover {
+  background-image: url("../../src/images/Can_Trash.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  width: 3vh;
+  height: 3vh;
+  /* border: 1px solid red; */
+  position: flex;
+  right: 67vh;
+  background-color: transparent;
+  font-weight: bold;
+  font-size: 25pt;
+  color: rgb(20, 20, 20);
+  text-align: center;
+  z-index: 888;
+  cursor: pointer;
+}
+
 /* #image {
   background-image: url("../../src/images/canttuna.png"); 
   background-size: 100% 100%;
@@ -176,7 +194,6 @@
 }
 
 #user_profile_image {
-  background-image: url("../../src/images/dongsuck.png");
   background-size: 100%;
   width: 6vh;
   height: 6vh;
